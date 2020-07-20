@@ -78,4 +78,10 @@ public class User {
 		
 		return this.id == other.id && this.name.equals(other.name) && this.email.equals(other.email);
 	}
+
+	@Override
+	public  String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
+	}
+	
 }

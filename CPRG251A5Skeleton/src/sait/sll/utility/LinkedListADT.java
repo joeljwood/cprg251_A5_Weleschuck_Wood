@@ -25,7 +25,7 @@ public interface LinkedListADT
 	 * Adds to the end of the list.
 	 * @param data Data to append.
 	 */
-	void append(Object data);
+	void append(Object data);	
 
 	/**
 	 * Prepends (adds to beginning) data to the list.
