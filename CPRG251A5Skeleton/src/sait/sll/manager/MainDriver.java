@@ -16,16 +16,25 @@ public class MainDriver {
 		//sll.print();
 		sll.append(joel);
 		sll.prepend(ali); // prepend is  works 
+		
+		
+		sll.print();
+		
 		//sll.print();
-		sll.append(zen);
-		sll.print(); 
-		System.out.println(sll.isEmpty()); //isempty works
-		System.out.println(sll.size()); // size works
+		
+		//sll.insert(zen, 2); //insert works
+		//sll.replace(zen, 1); //replace works
+		//sll.append(zen);
+		 
+		//System.out.println(sll.isEmpty()); //isempty works
+		//System.out.println(sll.size()); // size works
 		//sll.clear(); // clear works)
 		//System.out.println(sll.isEmpty());
 		//System.out.println(sll.size());
-		System.out.println(sll.retrieve(3)); // retrieve is working
-
+		//System.out.println(sll.retrieve(3)); // retrieve is working
+		//System.out.println(sll.indexOf(alice)); // indexOf is working
+		//System.out.println(sll.contains(ali));
+		//System.out.println(sll.contains(zen));//contains is working
 		//sll.delete(1); // fairly sure this isnt working
 
 	}

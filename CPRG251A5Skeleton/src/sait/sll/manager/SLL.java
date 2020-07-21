@@ -61,15 +61,46 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
+		if(index >= 0 && index < size()) {
+			Node newNode = new Node(data);
+			if(index == 0) {
+				newNode.setNext(head);
+				head = newNode;
+			}
+			else {
+				Node previous = head;
+				int count = 0;
+				while(count < index -1) {
+					previous = previous.getNext();
+					count ++;
+				}
+				Node current = previous.getNext();
+				previous.setNext(newNode);
+				newNode.setNext(current);
+			}
+			
+		}
+		else {
+			System.out.print("Index must be positive and less than the size of the list");
+		}
 
 	}
 
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
-
+		Node current = head;
+		if(index > 0 && index < size() && data != null) {
+			
+			for(int i = 0; i < index; i++) {
+				current = current.getNext();
+			}
+			current.setElement(data);
+		}
+		else {
+			System.out.println("Index must be greater than 0 and less than the size of the list");
+		}
 	}
+	
 
 	@Override
 	public int size() {
@@ -126,14 +157,45 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public int indexOf(Object data) {
-		// TODO Auto-generated method stub
-		return 0;
+		if(isEmpty()) {
+			System.out.println("The list is empty");
+			return -1;
+		}
+		else {
+			Node current = head;
+			for(int i = 0; i < size(); i++) {
+				if(data.equals(current.getElement())){
+					return i;
+				}
+				current = current.getNext();
+			}
+		return -1;
+		}
+		
 	}
 
 	@Override
 	public boolean contains(Object data) {
-		// TODO Auto-generated method stub
-		return false;
+		if(isEmpty()) {
+			System.out.println("The list is empty");
+			return false;
+		}
+		else {
+			Node current = head;
+			int index = -1;
+			for(int i = 0; i < size(); i++) {
+				if(data.equals(current.getElement())){
+					index = i;
+				}
+				current = current.getNext();
+			}
+			if (index >= 0) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 
 	public void print() { // not required method
