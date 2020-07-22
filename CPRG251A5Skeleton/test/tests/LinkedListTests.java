@@ -251,4 +251,34 @@ class LinkedListTests {
 		String value = (String) this.linkedList.retrieve(1);
 		assertEquals("b", value);
 	}
+	/**
+	 * Tests if the linked list is cleared properly
+	 */
+	@Test
+	void testClear() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+		
+		this.linkedList.clear();
+		
+		assertTrue(this.linkedList.isEmpty());
+		
+	}
+	/**
+	 * Tests if the size is correct
+	 */
+	@Test
+	void testSize() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+		
+		int size = 4;
+		
+		assertEquals(4, this.linkedList.size());
+	}
+	
 }
