@@ -1,5 +1,11 @@
 package sait.sll.manager;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 import sait.sll.problemdomain.Node; // note there were three different Node to import
 import sait.sll.problemdomain.User;
 import sait.sll.utility.LinkedListADT;
@@ -86,6 +92,7 @@ public class SLL implements LinkedListADT {
 				Node current = previous.getNext();
 				previous.setNext(newNode);
 				newNode.setNext(current);
+				length ++;
 			}
 			
 		}
@@ -212,5 +219,7 @@ public class SLL implements LinkedListADT {
 			System.out.println(temp.getElement().toString());
 		}
 	}
+	
+	
 
 }

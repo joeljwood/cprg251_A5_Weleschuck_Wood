@@ -2,6 +2,7 @@ package sait.sll.manager;
 
 import java.io.*;
 
+import sait.sll.problemdomain.Node;
 import sait.sll.problemdomain.User;
 /**
  * 
@@ -19,15 +20,15 @@ public class MainDriver {
 		User zen = new User(69420, "zen", "BluntSmokinAnusDestroy@gmail.com", "drowssap");
 		User ali = new User(9876, "Ali", "ALi@sait.ca", "password123");
 		
-		serialize(alice);
-		serialize(joel);
+		/*serialize(alice);
+		/serialize(joel);
 		serialize(zen);
 		serialize(ali);
 		
 		deserialize(alice);
 		deserialize(joel);
 		deserialize(zen);
-		deserialize(ali);
+		deserialize(ali);*/
 		
 		SLL sll = new SLL();
 		sll.append(alice); // append works
@@ -35,6 +36,8 @@ public class MainDriver {
 		sll.append(joel);
 		sll.prepend(ali); // prepend is  works 
 		
+		serialize(sll);
+		//deserialize(sll);
 		
 		sll.print();
 		
@@ -54,24 +57,30 @@ public class MainDriver {
 		//System.out.println(sll.contains(ali));
 		//System.out.println(sll.contains(zen));//contains is working
 		//sll.delete(1); // fairly sure this isnt working
+		//sll.print();
 
 	}
-	
-	public static void serialize(User u) throws IOException {
-		FileOutputStream fos = new FileOutputStream("res/user.bin");
-		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(u);
+	public static void serialize(SLL u) throws IOException {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		ObjectOutputStream oos = new ObjectOutputStream(baos);
+		for (int i = 0; i < u.size(); i++) {
+			oos.writeObject(u.retrieve(i));
+		}
+		
 		oos.close();
-		fos.close();
+		baos.close();
 	}
 	
-	public static void deserialize(User u) throws IOException, ClassNotFoundException{
-		FileInputStream fis = new FileInputStream("res/user.bin");
-		ObjectInputStream ois = new ObjectInputStream(fis);
-		User us = (User) ois.readObject();
+	/*public static void deserialize(SLL u) throws IOException, ClassNotFoundException{
+		ByteArrayInputStream bais = new ByteArrayInputStream();
+		ObjectInputStream ois = new ObjectInputStream(bais);
+		for (int i = 0; i < u.size(); i++) {
+			ois.readObject();
+			
+		}
 		ois.close();
-		fis.close();
-	}
+		bais.close();
+	}*/
 	
 
 }
