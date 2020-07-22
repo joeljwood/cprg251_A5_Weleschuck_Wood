@@ -124,28 +124,32 @@ public class SLL implements LinkedListADT {
 	}
 
 	@Override
-	public void delete(int index) throws IndexOutOfBoundsException {
-		Node first = head;
-		Node second = head;
-		for (int i = 0; i < index; i++) {
-			if (second.getNext() == null) {
-				if (i == index - 1) {
-					--length;
-					head = head.getNext();
-				}
-				return;
-			}
-
-			second = second.getNext();
+    public void delete(int index) throws IndexOutOfBoundsException {
+		if (index < 0) {
+			throw new IndexOutOfBoundsException();
 		}
-		while (second.getNext() != null) {
-			first = first.getNext();
-			second = second.getNext();
+		if (index == (int) index) {
+			System.out.println("Must be a positive Integer");
 		}
+        if (index == 0 && index < size()) {
+            Node current = head;
+            head = current.getNext();
+            length--;
+        }
+        else {
+            Node previous = head;
+            int count = 0;
+            while (count < index - 1) {
+                previous = previous.getNext();
+                count++;
+            }
+            Node current = previous.getNext();
+            previous.setNext(current.getNext());
+            length--;
 
-		first = first.getNext().getNext();
-		--length;
-	}
+        }
+
+    }
 
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {

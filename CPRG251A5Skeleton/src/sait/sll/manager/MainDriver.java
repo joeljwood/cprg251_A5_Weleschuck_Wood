@@ -56,8 +56,8 @@ public class MainDriver {
 		//System.out.println(sll.indexOf(alice)); // indexOf is working
 		//System.out.println(sll.contains(ali));
 		//System.out.println(sll.contains(zen));//contains is working
-		//sll.delete(1); // fairly sure this isnt working
-		//sll.print();
+		sll.delete(-1); // fairly sure this isnt working
+		sll.print();
 
 	}
 	public static void serialize(SLL u) throws IOException {
