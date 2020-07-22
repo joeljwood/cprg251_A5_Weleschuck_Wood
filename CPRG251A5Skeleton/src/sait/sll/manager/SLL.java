@@ -3,7 +3,13 @@ package sait.sll.manager;
 import sait.sll.problemdomain.Node; // note there were three different Node to import
 import sait.sll.problemdomain.User;
 import sait.sll.utility.LinkedListADT;
-
+/**
+ * 
+ * @author Zennon Weleschuck and Joel Wood
+ * @version 1.1 July 21 2020
+ * This method implements the methods of the LinkedListADT interface to build a linked list object
+ *
+ */
 public class SLL implements LinkedListADT {
 	private Node head;
 	private Node tail;
@@ -16,7 +22,10 @@ public class SLL implements LinkedListADT {
 		head = tail = null;
 
 	}
-
+	/**
+	 *  This method returns a boolean determining if the list is empty or not
+	 * @return isEmpty Returns boolean if the list is empty or not
+	 */
 	@Override
 	public boolean isEmpty() {
 		return (head == null);
@@ -197,7 +206,7 @@ public class SLL implements LinkedListADT {
 			}
 		}
 	}
-
+	
 	public void print() { // not required method
 		for (Node temp = head; temp != null; temp = temp.getNext()) {
 			System.out.println(temp.getElement().toString());

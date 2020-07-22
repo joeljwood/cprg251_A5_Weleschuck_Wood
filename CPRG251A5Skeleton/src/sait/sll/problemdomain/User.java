@@ -1,12 +1,14 @@
 package sait.sll.problemdomain;
 
+import java.io.Serializable;
+
 /**
  * Represents a user.
  * @author Nick Hamnett
  * @version 2019-07-25
  *
  */
-public class User {
+public class User implements Serializable{
 	private int id;
 	
 	private String name;
@@ -15,6 +17,8 @@ public class User {
 	
 	private String password;
 	
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * Initializes a User object.
 	 * @param id ID
@@ -22,7 +26,7 @@ public class User {
 	 * @param email E-mail address
 	 * @param password Password
 	 */
-	public User(int id, String name, String email, String password) {
+	public User(int id, String name, String email, String password){
 		this.id = id;
 		this.name = name;
 		this.email = email;

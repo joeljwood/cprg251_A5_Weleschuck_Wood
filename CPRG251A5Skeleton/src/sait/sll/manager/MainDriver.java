@@ -1,15 +1,33 @@
 package sait.sll.manager;
 
-import sait.sll.problemdomain.User;
+import java.io.*;
 
+import sait.sll.problemdomain.User;
+/**
+ * 
+ * @author Zennon Weleschuck and Joel Wood
+ * @version 1.1 July 21 2020
+ * Tests methods implemented in the SLL class
+ *
+ */
 public class MainDriver {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		//for testing code
 		User alice = new User(1234, "Alice", "email@gmail.com", "PaSsWord");
 		User joel = new User(4321, "Joel", "JW@gmail.com", "wordPass");
 		User zen = new User(69420, "zen", "BluntSmokinAnusDestroy@gmail.com", "drowssap");
 		User ali = new User(9876, "Ali", "ALi@sait.ca", "password123");
+		
+		serialize(alice);
+		serialize(joel);
+		serialize(zen);
+		serialize(ali);
+		
+		deserialize(alice);
+		deserialize(joel);
+		deserialize(zen);
+		deserialize(ali);
 		
 		SLL sll = new SLL();
 		sll.append(alice); // append works
@@ -38,5 +56,22 @@ public class MainDriver {
 		//sll.delete(1); // fairly sure this isnt working
 
 	}
+	
+	public static void serialize(User u) throws IOException {
+		FileOutputStream fos = new FileOutputStream("res/user.bin");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(u);
+		oos.close();
+		fos.close();
+	}
+	
+	public static void deserialize(User u) throws IOException, ClassNotFoundException{
+		FileInputStream fis = new FileInputStream("res/user.bin");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		User us = (User) ois.readObject();
+		ois.close();
+		fis.close();
+	}
+	
 
 }
