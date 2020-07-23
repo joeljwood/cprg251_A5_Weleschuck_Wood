@@ -36,7 +36,7 @@ public class MainDriver {
 		sll.append(joel);
 		sll.prepend(ali); // prepend is  works 
 		
-		serialize(sll);
+		//serialize(sll);
 		//deserialize(sll);
 		
 		sll.print();
@@ -56,11 +56,11 @@ public class MainDriver {
 		//System.out.println(sll.indexOf(alice)); // indexOf is working
 		//System.out.println(sll.contains(ali));
 		//System.out.println(sll.contains(zen));//contains is working
-		sll.delete(-1); // fairly sure this isnt working
-		sll.print();
+		//sll.delete(1); // delete is working now
+		//sll.print();
 
 	}
-	public static void serialize(SLL u) throws IOException {
+	/*public static void serialize(SLL u) throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		ObjectOutputStream oos = new ObjectOutputStream(baos);
 		for (int i = 0; i < u.size(); i++) {
@@ -71,7 +71,7 @@ public class MainDriver {
 		baos.close();
 	}
 	
-	/*public static void deserialize(SLL u) throws IOException, ClassNotFoundException{
+	public static void deserialize(SLL u) throws IOException, ClassNotFoundException{
 		ByteArrayInputStream bais = new ByteArrayInputStream();
 		ObjectInputStream ois = new ObjectInputStream(bais);
 		for (int i = 0; i < u.size(); i++) {

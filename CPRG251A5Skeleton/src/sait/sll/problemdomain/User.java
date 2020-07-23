@@ -82,6 +82,7 @@ public class User implements Serializable{
 		
 		return this.id == other.id && this.name.equals(other.name) && this.email.equals(other.email);
 	}
+	
 
 	@Override
 	public  String toString() {

@@ -1,8 +1,7 @@
 package sait.sll.problemdomain;
 
 
-
-public class Node {
+public class Node{
 	private Object element;
 	private Node successor;
 	

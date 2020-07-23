@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import sait.sll.problemdomain.Node; // note there were three different Node to import
 import sait.sll.problemdomain.User;
@@ -16,7 +17,7 @@ import sait.sll.utility.LinkedListADT;
  * This method implements the methods of the LinkedListADT interface to build a linked list object
  *
  */
-public class SLL implements LinkedListADT {
+public class SLL implements LinkedListADT, Serializable {
 	private Node head;
 	private Node tail;
 	private int length = 0;

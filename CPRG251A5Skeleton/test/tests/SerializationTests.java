@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import sait.sll.manager.SLL;
 import sait.sll.problemdomain.*;
 import sait.sll.utility.*;
 
