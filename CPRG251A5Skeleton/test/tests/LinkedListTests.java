@@ -10,7 +10,9 @@ import sait.sll.utility.*;
 /**
  * @author Nick Hamnett
  * @author Maryam Moussavi
- * @version 2020-03-24
+ * @author Zennon Weleschuck
+ * @author Joel Wood
+ * @version 2020-07-23
  *
  */
 class LinkedListTests {

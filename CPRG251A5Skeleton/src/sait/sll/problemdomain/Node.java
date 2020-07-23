@@ -1,7 +1,8 @@
 package sait.sll.problemdomain;
 
+import java.io.Serializable;
 
-public class Node{
+public class Node implements Serializable{
 	private Object element;
 	private Node successor;
 	

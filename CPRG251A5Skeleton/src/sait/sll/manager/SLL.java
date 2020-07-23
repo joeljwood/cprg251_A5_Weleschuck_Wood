@@ -37,14 +37,20 @@ public class SLL implements LinkedListADT, Serializable {
 	public boolean isEmpty() {
 		return (head == null);
 	}
-
+	
+	/**
+	 * Deletes the entire linked list
+	 */
 	@Override
 	public void clear() {
 		head = null;
 		length = 0;
 
 	}
-
+	
+	/**
+	 * Allows the user to add on an object to the end of the linked list
+	 */
 	@Override
 	public void append(Object data) {
 		if (!isEmpty()) {
@@ -57,6 +63,9 @@ public class SLL implements LinkedListADT, Serializable {
 		}
 	}
 
+	/**
+	 * Allows the user to add on an object to the start of the linked list
+	 */
 	@Override
 	public void prepend(Object data) {
 		// head = new Node(data, head);
@@ -75,6 +84,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 	}
 
+	/**
+	 * Will insert an object into the list at the specified index
+	 */
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
 		if(index >= 0 && index < size()) {
@@ -103,6 +115,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 	}
 
+	/**
+	 * Will replace an object at a specific index with object specified
+	 */
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
 		Node current = head;
@@ -119,11 +134,18 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 	
 
+	/**
+	 * Returns the length of the linked list
+	 * @return length length of the linked list
+	 */
 	@Override
 	public int size() {
 		return length;
 	}
 
+	/**
+	 * Deletes the object at the index that is passed into the method
+	 */
 	@Override
     public void delete(int index) throws IndexOutOfBoundsException {
 		if (index < 0) {
@@ -152,6 +174,11 @@ public class SLL implements LinkedListADT, Serializable {
 
     }
 
+	/**
+	 * Will retrieve the object at index passed in
+	 * @return null if the linked list is empty or index is not in the linked list
+	 * @return temp Object at index if index is correct and exists
+	 */
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
 		if (isEmpty()) {
@@ -176,6 +203,11 @@ public class SLL implements LinkedListADT, Serializable {
 		return temp;
 	}
 
+	/**
+	 * Method takes in a passed object and will find the index of the object
+	 * @return i index of the object
+	 * @return -1 if the object doesn't exist
+	 */
 	@Override
 	public int indexOf(Object data) {
 		if(isEmpty()) {
@@ -195,6 +227,11 @@ public class SLL implements LinkedListADT, Serializable {
 		
 	}
 
+	/**
+	 * Will return true or false depending on if the linked list contains the object
+	 * @return true if it contains the object
+	 * @return false if it does not contain the object
+	 */
 	@Override
 	public boolean contains(Object data) {
 		if(isEmpty()) {
@@ -218,7 +255,9 @@ public class SLL implements LinkedListADT, Serializable {
 			}
 		}
 	}
-	
+	/**
+	 * print method for testing
+	 */
 	public void print() { // not required method
 		for (Node temp = head; temp != null; temp = temp.getNext()) {
 			System.out.println(temp.getElement().toString());

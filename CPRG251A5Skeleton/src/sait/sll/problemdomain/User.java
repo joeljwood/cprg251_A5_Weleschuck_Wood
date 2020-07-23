@@ -15,9 +15,9 @@ public class User implements Serializable{
 	
 	private String email;
 	
-	private String password;
+	transient private String password;
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	/**
 	 * Initializes a User object.
@@ -82,7 +82,10 @@ public class User implements Serializable{
 		
 		return this.id == other.id && this.name.equals(other.name) && this.email.equals(other.email);
 	}
-	
+
+	/**
+	 * @return Print statement of the user object
+	 */
 
 	@Override
 	public  String toString() {
