@@ -11,7 +11,7 @@ import sait.sll.problemdomain.User;
  * Tests methods implemented in the SLL class
  *
  */
-public class MainDriver {
+public class MainDriver implements Serializable {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		//for testing code
