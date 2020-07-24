@@ -40,6 +40,7 @@ public class SLL implements LinkedListADT, Serializable {
 	
 	/**
 	 * Deletes the entire linked list
+	 * 
 	 */
 	@Override
 	public void clear() {
@@ -50,6 +51,7 @@ public class SLL implements LinkedListADT, Serializable {
 	
 	/**
 	 * Allows the user to add on an object to the end of the linked list
+	 * @param user object
 	 */
 	@Override
 	public void append(Object data) {
@@ -65,6 +67,7 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Allows the user to add on an object to the start of the linked list
+	 * @param user object
 	 */
 	@Override
 	public void prepend(Object data) {
@@ -86,6 +89,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Will insert an object into the list at the specified index
+	 * @param user object
+	 * @param index value in list
+	 * 
 	 */
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
@@ -117,6 +123,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Will replace an object at a specific index with object specified
+	 * @param user object
+	 * @param index value for list
+	 * 
 	 */
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
@@ -145,6 +154,7 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Deletes the object at the index that is passed into the method
+	 * @param index value for list
 	 */
 	@Override
     public void delete(int index) throws IndexOutOfBoundsException {
@@ -205,6 +215,7 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Method takes in a passed object and will find the index of the object
+	 * @param user object
 	 * @return i index of the object
 	 * @return -1 if the object doesn't exist
 	 */
@@ -229,6 +240,7 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Will return true or false depending on if the linked list contains the object
+	 * @param user object
 	 * @return true if it contains the object
 	 * @return false if it does not contain the object
 	 */

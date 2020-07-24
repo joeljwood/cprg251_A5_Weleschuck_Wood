@@ -17,7 +17,7 @@ public class MainDriver implements Serializable {
 		//for testing code
 		User alice = new User(1234, "Alice", "email@gmail.com", "PaSsWord");
 		User joel = new User(4321, "Joel", "JW@gmail.com", "wordPass");
-		User zen = new User(69420, "zen", "BluntSmokinAnusDestroy@gmail.com", "drowssap");
+		User zen = new User(69420, "zen", "zw@gmail.com", "drowssap");
 		User ali = new User(9876, "Ali", "ALi@sait.ca", "password123");
 		
 		/*serialize(alice);
